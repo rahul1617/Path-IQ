@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Path-IQ WSI Viewer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <style>
+    body { margin: 0; }
+    main { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+    #viewer { height: 75vh; border: 1px solid #ddd; border-radius: 8px; }
+    #status { margin-top: .5rem; min-height: 1.5rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Path-IQ WSI Viewer</h1>
+    <p>Upload an <code>.svs</code> slide and pan/zoom interactively.</p>
+
+    <form id="upload-form">
+      <input id="slide-file" type="file" name="file" accept=".svs" required />
+      <button type="submit">Upload & Open</button>
+    </form>
+
+    <small id="status"></small>
+    <div id="viewer" aria-label="Whole slide viewer"></div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.0/openseadragon.min.js"></script>
+  <script src="/static/main.js"></script>
+</body>
+</html>
